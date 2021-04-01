@@ -15,8 +15,9 @@ const classNames = {
   let contadorChecked=0
 
   function addTodo() {
-    alert('Boton Add TODO clickeado!')
+    //alert('Boton Add TODO clickeado!')
     const tituloTarea = prompt('Que tarea quieres agregar?')
+    alert (tituloTarea)
     if (tituloTarea != undefined){
         contador++
         itemCountSpan.innerHTML = contador
