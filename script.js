@@ -19,6 +19,8 @@ function addTodo() {
     if (tituloTarea != undefined) {
       contador++;
       itemCountSpan.innerHTML = contador;
+      contadorChecked++;
+      uncheckedCountSpan.innerHTML=contadorChecked;
 
       var node = document.createElement("LI");
       var check = document.createElement("INPUT");
@@ -30,10 +32,10 @@ function addTodo() {
       check.addEventListener("change", function () {
         if (this.checked) {
           //alert('checkbox esta seleccionado');
-          contadorChecked++;
+          contadorChecked--;
           uncheckedCountSpan.innerHTML = contadorChecked;
         } else {
-          contadorChecked--;
+          contadorChecked++;
           uncheckedCountSpan.innerHTML = contadorChecked;
         }
       });
