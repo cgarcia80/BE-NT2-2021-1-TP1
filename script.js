@@ -29,16 +29,7 @@ function addTodo() {
       check.setAttribute("type", "checkbox");
       check.className = classNames.TODO_CHECKBOX;
       check.id = "data";
-      check.addEventListener("change", function () {
-        if (this.checked) {
-          //alert('checkbox esta seleccionado');
-          contadorChecked--;
-          uncheckedCountSpan.innerHTML = contadorChecked;
-        } else {
-          contadorChecked++;
-          uncheckedCountSpan.innerHTML = contadorChecked;
-        }
-      });
+      agregarContador(check);
       node.appendChild(textnode);
       node.className = classNames.TODO_ITEM;
       list.appendChild(node);
@@ -46,3 +37,15 @@ function addTodo() {
     }
   }
 }
+
+function agregarContador(check ){
+  check.addEventListener("change", function () {
+  if (this.checked) {
+    //alert('checkbox esta seleccionado');
+    contadorChecked--;
+    uncheckedCountSpan.innerHTML = contadorChecked;
+  } else {
+    contadorChecked++;
+    uncheckedCountSpan.innerHTML = contadorChecked;
+  }
+})}
